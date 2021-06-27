@@ -3,7 +3,22 @@ import "./portfolio.scss"
 export default function portfolio(){
     return (
         <div className="portfolio" id="portfolio">
-
+            <h1>Portfolio</h1>
+            <ul>
+                <li className="active">Featured</li>
+                <li>Mobile apps</li>
+                <li>Developing</li>
+            </ul>
+            <div className="container">
+                <div className="item">
+                    <img src="assets/gz.png" alt="" />
+                    <h3>Groupz</h3>
+                </div>
+                <div className="item">
+                    <img src="assets/git.png" alt="" />
+                    <h3>Github</h3>
+                </div>
+            </div>
         </div>
     )
 }
