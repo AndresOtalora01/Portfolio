@@ -1,10 +1,15 @@
 import PortfolioList from "../portfolioList/PortfolioList";
 import "./portfolio.scss"
 import React, { useEffect, useState } from "react";
+import {
+    featuredPortfolio,
+    mobilePortfolio
+} from "../../data";
 
 export default function Portfolio(){
 
     const [selected, setSelected] = useState("featured");
+    const [data, setData] = useState([]);
 
     const list = [
         {
@@ -17,6 +22,21 @@ export default function Portfolio(){
             id:"developing", title: "Developing"
         }
     ];
+
+    useEffect(()=>{
+
+        switch(selected){
+            case "featured":
+                setData(featuredPortfolio);
+                break;
+            case "mobile":
+                setData(mobilePortfolio);
+                break;
+                default:
+                setData(featuredPortfolio);
+        }
+    }, [selected]);
+
     return (
         <div className="portfolio" id="portfolio">
             <h1>Portfolio</h1>
@@ -26,14 +46,13 @@ export default function Portfolio(){
                 ))}
             </ul>
             <div className="container">
-                <div className="item">
-                    <img src="assets/gz.png" alt="" />
-                    <h3>Groupz</h3>
-                </div>
-                <div className="item">
-                    <img src="assets/git.png" alt="" />
-                    <h3>Github</h3>
-                </div>
+                {data.map(d => (
+                    <div className="item">
+                    <img src={d.img} alt="" />
+                    <h3>{d.title}</h3>
+                    </div>
+                ))
+            }
             </div>
         </div>
     )
