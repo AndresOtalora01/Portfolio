@@ -1,15 +1,15 @@
 import "./works.scss"
 import React, { useEffect, useState } from "react";
-export default function Works(){
+export default function Works() {
 
-    const [currentSlide,setCurrentSlide] =useState(0);
+    const [currentSlide, setCurrentSlide] = useState(0);
 
     const data = [
         {
             id: 1,
             icon: "./assets/hdpi.png",
             title: "Groupz",
-            desc: "Es una aplicación que te permite conocer gente nueva a través de eventos creados por ti o por la comunidad. Está desarrollada nativamente en Android utilizando kotlin y como base de datos Firestore.",
+            desc: "It is an application that allows you to meet new people through events created by you or by the community. It is developed natively in Android using kotlin and  Firestore as the database.",
             img: "./assets/combine_images.png",
             link: "https://play.google.com/store/apps/details?id=cat.copernic.groupz"
         },
@@ -17,25 +17,33 @@ export default function Works(){
             id: 2,
             icon: "./assets/ruedawhite.png",
             title: "Andruino",
-            desc: "Con Andruino podemos controlar un dron terrestre fabricado con un dispositivo ESP32 a través de la aplicación nativa de android con Kotlin y BLE (bluetooth low energy). Este dispositivo envía su ubicación en tiempo real a la base de datos.",
+            desc: "With Andruino we can control a land drone made with an ESP32 device through the native android application with Kotlin and BLE (bluetooth low energy). This device sends its location in real time to the database.",
             img: "./assets/andruino2.jpg",
             link: "https://github.com/AndresOtalora01/andruino"
         },
         {
-            id:3,
+            id: 3,
             icon: "./assets/secure.png",
-            title:"Hash Generator",
-            desc: "Utilizando hash generator podemos transformar texto en un hash utilizando diferentes algoritmos de encriptación como MD5, SHA-256 y más. Se ha desarrollado para Android utilizando kotlin.",
-            img:"./assets/hash2.jpg",
-            link:"https://github.com/AndresOtalora01/HashGenerator"
+            title: "Hash Generator",
+            desc: "Using hash generator we can transform text into a hash using different encryption algorithms like MD5, SHA-256 and more. It has been developed for Android using kotlin.",
+            img: "./assets/hash2.jpg",
+            link: "https://github.com/AndresOtalora01/HashGenerator"
+        },
+        {
+            id: 4,
+            icon: "./assets/githubwhite.png",
+            title: "GitHub",
+            desc: "This is my personal Github profile. Here I constantly upload my projects using different technologies.",
+            img: "./assets/git.png",
+            link: "https://github.com/AndresOtalora01"
         }
     ];
 
     const handleClick = (way) => {
         way === "left"
-          ? setCurrentSlide(currentSlide > 0 ? currentSlide - 1 : 2)
-          : setCurrentSlide(currentSlide < data.length - 1 ? currentSlide + 1 : 0);
-      };
+            ? setCurrentSlide(currentSlide > 0 ? currentSlide - 1 : 3)
+            : setCurrentSlide(currentSlide < data.length - 1 ? currentSlide + 1 : 0);
+    };
 
 
 
@@ -43,29 +51,29 @@ export default function Works(){
     return (
         <div className="works" id="works">
 
-        <div className="slider" style={{ transform: `translateX(-${currentSlide * 100}vw)` }}>
-            {data.map((d)=>(
-            <div className="container">
-                <div className="item">
-                    <div className="left">
-                        <div className="leftContainer">
-                            <div className="imgContainer">
-                                <img src={d.icon} alt="" />
+            <div className="slider" style={{ transform: `translateX(-${currentSlide * 100}vw)` }}>
+                {data.map((d) => (
+                    <div className="container">
+                        <div className="item">
+                            <div className="left">
+                                <div className="leftContainer">
+                                    <div className="imgContainer">
+                                        <img src={d.icon} alt="" />
+                                    </div>
+                                    <h2>{d.title}</h2>
+                                    <p>{d.desc}</p>
+                                    <a href={d.link}>See more</a>
+                                </div>
                             </div>
-                            <h2>{d.title}</h2>
-                            <p>{d.desc}</p>
-                            <a href={d.link}>See more</a>
+                            <div className="right">
+                                <img src={d.img} alt="" />
+                            </div>
                         </div>
-                    </div>
-                    <div className="right">
-                        <img src={d.img} alt="" />
-                    </div>
-                </div>
-                
-            </div>))}
-        </div>
-        <img src="assets/down.png" className="arrow left" alt="" onClick={() => handleClick("left")}/>
-        <img src="assets/down.png" className="arrow right" alt="" onClick={() => handleClick()} />
+
+                    </div>))}
+            </div>
+            <img src="assets/down.png" className="arrow left" alt="" onClick={() => handleClick("left")} />
+            <img src="assets/down.png" className="arrow right" alt="" onClick={() => handleClick()} />
         </div>
     );
 }
