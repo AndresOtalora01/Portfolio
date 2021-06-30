@@ -8,11 +8,11 @@ export default function Topbar({menuOpen, setMenuOpen}){
                     <a href="#intro" className="logo">ethereal.</a>
                     <div className="itemContainer">
                     <Person className="icon"/>
-                    <span>+34 666666666</span>
+                    <span>+34 622028118</span>
                     </div>
                     <div className="itemContainer">
                         <Mail className="icon"/>
-                        <span>test@gmail.com</span>
+                        <span>andres.otalora.rodriguez@gmail.com</span>
                     </div>
                 </div>
                 <div className="right">

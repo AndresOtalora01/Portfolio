@@ -17,7 +17,7 @@ export default function Works(){
             id: 2,
             icon: "./assets/ruedawhite.png",
             title: "Andruino",
-            desc: "Con Andruino podemos controlar un dron terrestre fabricado con un dispositivo ESP32 a través de la aplicación nativa de android con Kotlin y BLE (bluetooth low energy). Este dispositivo envía información como su ubicación en tiempo real a la base de datos entre otros.",
+            desc: "Con Andruino podemos controlar un dron terrestre fabricado con un dispositivo ESP32 a través de la aplicación nativa de android con Kotlin y BLE (bluetooth low energy). Este dispositivo envía su ubicación en tiempo real a la base de datos.",
             img: "./assets/andruino2.jpg",
             link: "https://github.com/AndresOtalora01/andruino"
         },
